@@ -1,6 +1,7 @@
-### TEST PLAN ###
 
-#IN-SCOPE#
+## TEST PLAN
+
+[x] IN-SCOPE
 
 * Page Navgational Tests
 * Field Validational Tests
@@ -8,13 +9,13 @@
 * Caclulation Tests - Reports Page
 * Data Injection Tests - Budget Page
 
-#OUT-SCOPE#
+[x] OUT-SCOPE
 
 * Security Tests
 * Performance Tests
 
 
-## TEST CONDITIONS ##
+## TEST CONDITIONS
 
 * TS001 Validate Addition of Income
 	Add Income in BudgetPage
@@ -45,15 +46,15 @@
  	 
 
  
-##TEST EXECUTION##
+## TEST EXECUTION
 
-Tests were written using TestCafe framework
-Tests were written in Tests.js
-Tests were written for budgettting-app running in http://localhost:8000/:
-Tests were written in assumption that, execution will be done on command line
+*Tests were written using TestCafe framework
+*Tests were written in Tests.js
+*Tests were written for budgettting-app running in http://localhost:8000/:
+*Tests were written in assumption that, execution will be done on command line
 
 
-* Pre-requsites
+[x] Pre-requsites
 
 The following modules are required to Run the Tests
 
@@ -62,16 +63,18 @@ The following modules are required to Run the Tests
 		npm install testcafe-reporter-html	 
 
 
-* Execution
+[x] Execution
 
-Command:
+*Command:
 
 		testcafe [BROWSER] [TESTFILEPATH] --reporter [<<format>>:<<respath>>]
 
-Example:
-		testcafe chrome e2e/Tests.js --reporter html:Res/report.html
+*Example:
 
-Expected Results:
+    testcafe chrome e2e/Tests.js --reporter html:Res/report.html
+
+*Expected Results:
+
 There will be three sets of actions will be done. TS001,TS002 would pass, and the TS003 would fail.
 
 
