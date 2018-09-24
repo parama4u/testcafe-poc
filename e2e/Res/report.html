@@ -1,0 +1,97 @@
+
+      <html lang="en">
+        <head>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://cdn.rawgit.com/drvic10k/bootstrap-sortable/ff650fd1/Contents/bootstrap-sortable.css">
+          <script
+                  src="https://code.jquery.com/jquery-3.3.1.min.js"
+                  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                  crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+          <script src="https://cdn.rawgit.com/drvic10k/bootstrap-sortable/ff650fd1/Scripts/bootstrap-sortable.js"></script>
+          <script src="https://cdn.rawgit.com/drvic10k/bootstrap-sortable/ff650fd1/Scripts/moment.min.js"></script>
+        </head>
+        <body>
+          <div class="container">
+      
+            <h1 class="text-primary">TestCafe Test Summary</h1>
+            <br>
+            <div class="client-logo" style="padding:15px"></div>
+            <div class="bg-primary" style="padding:15px">
+              <h3>Summary</h3><br>
+              <p class="lead">Start Time: Mon Sep 24 2018 15:30:45 GMT+0900 (JST)</p>
+              <p class="lead">Browsers: Chrome 69.0.3497 / Linux 0.0.0</p>
+              <p class="lead">Duration: 47s</p>
+              <p class="lead">Tests Failed: 1 out of 3</p>
+              <p class="lead">Tests Skipped: 0</p>
+            </div><br>
+      
+            <table class="table sortable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Fixture</th>
+                  <th>Test Name</th>
+                  <th>Browsers</th>
+                  <th>Duration</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="success">
+  <td>1</td>
+  <td>Modus</td>
+  <td>Validate Income Addition</td>
+  <td>Chrome 69.0.3497 / Linux 0.0.0</td>
+  <td>18s</td>
+  <td>passed</td>
+ </tr>
+ <tr class="success">
+  <td>2</td>
+  <td>Modus</td>
+  <td>Validate Expense Addition</td>
+  <td>Chrome 69.0.3497 / Linux 0.0.0</td>
+  <td>14s</td>
+  <td>passed</td>
+ </tr>
+ <tr class="danger">
+  <td>3</td>
+  <td>Modus</td>
+  <td>Validate Data Storage - A Case to fail</td>
+  <td>Chrome 69.0.3497 / Linux 0.0.0</td>
+  <td>15s</td>
+  <td><a href="#test-3">failed</a></td>
+ </tr>
+
+              </tbody>
+            </table>
+            <br><br>
+      
+            <h3>Error Details</h3>
+            <br>
+             <h4 id="test-3">3. Modus - Validate Data Storage - A Case to fail</h4>
+ <pre>AssertionError: InFlow Grid Update: expected 6 to deeply equal 7
+
+Browser: Chrome 69.0.3497 / Linux 0.0.0
+
+   134 |           .click(btnSub)
+   135 |
+   136 |           //Validations
+   137 |           //This will Fail - Added contents are not stored in DB, So the added row wwill vanish after a refresh
+   138 |            await t.eval(() => location.reload(true));
+ > 139 |            await t.expect((await getTrans(gridBd)).length).eql(curRows+1,'InFlow Grid Update')
+   140 |
+   141 |
+   142 |});
+   143 |
+   144 |
+
+   at eql (/home/el/budgetting/e2e/Tests.js:139:61)
+   at step (/home/el/budgetting/node_modules/babel-runtime/helpers/asyncToGenerator.js:17:30)
+   at <anonymous> (/home/el/budgetting/node_modules/babel-runtime/helpers/asyncToGenerator.js:28:13) </pre>
+      
+          </div>
+        </body>
+      </html>
+      
